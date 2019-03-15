@@ -8,8 +8,7 @@ public class PositionParameterModifier : ParameterModifier
 
 	public void Update()
 	{
-		return;
-		Vector3 playerPosition = PlayerManager.Instance.Player.headCollider.transform.position;
+		Vector3 playerPosition = PlayerManager.Instance.Player.transform.position;
 
 		float positionValue = 0;
 		

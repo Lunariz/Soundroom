@@ -28,7 +28,6 @@ namespace FMODUnity
 
         private bool hasTriggered = false;
         private bool isQuitting = false;
-		private bool isOneShot = false;
 
         void Start() 
         {
@@ -60,7 +59,7 @@ namespace FMODUnity
 
         void OnDestroy()
         {
-            if (!isQuitting || !isOneShot)
+            if (!isQuitting)
             {
                 HandleGameEvent(EmitterGameEvent.ObjectDestroy);
                 if (instance.isValid())
@@ -171,10 +170,10 @@ namespace FMODUnity
                 Lookup();
             }
 
-            isOneShot = false;
+            bool isOneshot = false;
             if (!Event.StartsWith("snapshot", StringComparison.CurrentCultureIgnoreCase))
             {
-                eventDescription.isOneshot(out isOneShot);
+                eventDescription.isOneshot(out isOneshot);
             }
             bool is3D;
             eventDescription.is3D(out is3D);
@@ -185,7 +184,7 @@ namespace FMODUnity
             }
 
             // Let previous oneshot instances play out
-            if (isOneShot && instance.isValid())
+            if (isOneshot && instance.isValid())
             {
                 instance.release();
                 instance.clearHandle();
@@ -226,7 +225,6 @@ namespace FMODUnity
             }
 
             instance.start();
-			Debug.Log("start");
 
             hasTriggered = true;
 
@@ -237,7 +235,6 @@ namespace FMODUnity
             if (instance.isValid())
             {
                 instance.stop(AllowFadeout ? FMOD.Studio.STOP_MODE.ALLOWFADEOUT : FMOD.Studio.STOP_MODE.IMMEDIATE);
-				Debug.Log("stop"); 
                 instance.release();
                 instance.clearHandle();
             }

@@ -369,7 +369,7 @@ namespace FMOD
     ]
     */
     [Flags]
-    public enum DEBUG_FLAGS : int
+    public enum DEBUG_FLAGS : uint
     {
         NONE                    = 0x00000000,   /* Disable all messages */
         ERROR                   = 0x00000001,   /* Enable only error messages. */
