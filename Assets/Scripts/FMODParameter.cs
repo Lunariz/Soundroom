@@ -3,16 +3,24 @@ using System.Collections;
 
 public class FMODParameter : MonoBehaviour
 {
+	public string Parameter;
+	public ParameterModifier[] ParameterModifiers;
 
-	// Use this for initialization
-	void Start()
+	[HideInInspector]
+	public FMODEvent FMODEvent;
+
+	public void Awake()
 	{
+		for (int i = 0; i < ParameterModifiers.Length; i++)
+		{
+			ParameterModifier modifier = ParameterModifiers[i];
 
+			modifier.FMODParameter = this;
+		}
 	}
 
-	// Update is called once per frame
-	void Update()
+	public void SetParameter(float value)
 	{
-
+		FMODEvent.SetParameter(Parameter, value);
 	}
 }
