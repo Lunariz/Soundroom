@@ -10,20 +10,7 @@ public class PositionParameterModifier : ParameterModifier
 	{
 		Vector3 playerPosition = PlayerManager.Instance.Player.transform.position;
 
-		float positionValue = 0;
-		
-		if (PositionAxis == TrackAxis.X)
-		{
-			positionValue = playerPosition.x;
-		}
-		else if (PositionAxis == TrackAxis.Y)
-		{
-			positionValue = playerPosition.y;
-		}
-		else if (PositionAxis == TrackAxis.Z)
-		{
-			positionValue = playerPosition.z;
-		}
+		float positionValue = TrackAxisUtility.GetValue(playerPosition, PositionAxis);
 
 		SetParameter(positionValue);
 		CurrentParameterValue = positionValue;
