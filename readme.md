@@ -4,7 +4,7 @@
 
 Soundroom is a VR project that aims to help composers and sound designers experiment with spacial and dynamic sound.
 
-By providing an environment that gives access to a wide range of parameters, anyone can build a space contains sounds that react to position, movement and gaze.
+By providing an environment that gives access to a wide range of parameters, anyone can build a space containing sounds that react to position, movement and gaze.
 
 
 This project is a work in progress
