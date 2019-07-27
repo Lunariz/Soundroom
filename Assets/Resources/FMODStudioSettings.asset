@@ -57,7 +57,8 @@ MonoBehaviour:
     Value: 256
   - Platform: 2
     Value: 32
-  Plugins: []
+  Plugins:
+  - resonanceaudio
   MasterBanks:
   - Master Bank
   Banks: []
