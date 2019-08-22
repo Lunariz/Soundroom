@@ -11,7 +11,8 @@ public class FMODEventInspector : Editor
 
 		if (GUILayout.Button("Add Parameter"))
 		{
-			GameObject newParamGO = new GameObject("NewParameter");
+			GameObject newParamGO = new GameObject("New Parameter");
+			newParamGO.name = "New Parameter";
 			FMODParameter newParam = newParamGO.AddComponent<FMODParameter>();
 			newParamGO.transform.parent = FMODEvent.transform;
 			Selection.activeGameObject = newParamGO;

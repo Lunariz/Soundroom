@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeType: 4
+  TriggerButton: TriggerLeft
 --- !u!135 &734451359
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -466,6 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeType: 5
+  TriggerButton: TriggerRight
 --- !u!135 &778976072
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -563,7 +565,7 @@ MonoBehaviour:
   Parameter: Volume
   CurrentParameterValue: 0
   ParameterModifiers:
-  - {fileID: 0}
+  - {fileID: 1485965577}
   FMODEvent: {fileID: 0}
 --- !u!4 &1313898866
 Transform:

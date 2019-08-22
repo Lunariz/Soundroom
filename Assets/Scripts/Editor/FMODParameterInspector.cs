@@ -37,7 +37,14 @@ public class FMODParameterInspector : Editor
 
 		if (!Application.isPlaying && FMODParameter.gameObject.name != FMODParameter.Parameter)
 		{
-			FMODParameter.gameObject.name = FMODParameter.Parameter;
+			if (string.IsNullOrEmpty(FMODParameter.Parameter))
+			{
+				FMODParameter.gameObject.name = "New Parameter";
+			}
+			else
+			{
+				FMODParameter.gameObject.name = FMODParameter.Parameter;
+			}
 		}
 
 		base.OnInspectorGUI();
