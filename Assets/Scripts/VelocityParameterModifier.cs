@@ -5,18 +5,19 @@ using System.Collections.Generic;
 public class VelocityParameterModifier : ParameterModifier
 {
 	public float CurrentParameterValue;
+	public TrackObject SourceObject;
 	public TrackAxis VelocityAxis;
 	public float OverDuration = 1f;
 	public List<TimePosition> RecentPositions;
 
 	public void Update()
 	{
-		Vector3 playerPosition = PlayerManager.Instance.Player.transform.position;
+		Vector3 position = TrackObjectUtility.GetObject(SourceObject).transform.position;
 
 		RecentPositions.Add(new TimePosition()
 		{
 			Time = Time.time,
-			Position = playerPosition
+			Position = position
 		});
 
 		while (RecentPositions.Count > 1 && RecentPositions[1].Time <= Time.time - OverDuration)

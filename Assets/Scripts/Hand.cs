@@ -9,7 +9,7 @@ public class Hand : MonoBehaviour
 
 	public void Start()
 	{
-		//XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale);
+		XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale);
 	}
 
 	public void Update()

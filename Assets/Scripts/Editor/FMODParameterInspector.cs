@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Linq;
 
 [CustomEditor(typeof(FMODParameter))]
 public class FMODParameterInspector : Editor
@@ -31,7 +32,7 @@ public class FMODParameterInspector : Editor
 			Selection.activeGameObject = newParamModifierGO;
 		}
 
-		ParameterModifier[] modifiers = FMODParameter.GetComponentsInChildren<ParameterModifier>();
+		ParameterModifier[] modifiers = FMODParameter.GetComponentsInChildren<ParameterModifier>().Where(m => m.enabled).ToArray();
 		FMODParameter.ParameterModifiers = modifiers;
 
 		if (!Application.isPlaying && FMODParameter.gameObject.name != FMODParameter.Parameter)

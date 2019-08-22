@@ -5,7 +5,9 @@ public class PlayerManager : MonoBehaviour
 {
 	public static PlayerManager Instance;
 
-	public GameObject Player;
+	public GameObject Head;
+	public GameObject LeftHand;
+	public GameObject RightHand;
 
 	public void Awake()
 	{

@@ -9,7 +9,7 @@ public class FacingAngleParameterModifier : ParameterModifier
 
 	public void Update()
 	{
-		Vector3 playerRotation = PlayerManager.Instance.Player.transform.rotation.eulerAngles;
+		Vector3 playerRotation = PlayerManager.Instance.Head.transform.rotation.eulerAngles;
 		Vector3 modifiedPlayerRotation = new Vector3(
 			Clamp180(playerRotation.y),
 			-Clamp180(playerRotation.x),
