@@ -31,6 +31,13 @@ public class FMODParameterInspector : Editor
 			newParamModifierGO.transform.parent = FMODParameter.transform;
 			Selection.activeGameObject = newParamModifierGO;
 		}
+		if (GUILayout.Button("Add Input Modifier"))
+		{
+			GameObject newParamModifierGO = new GameObject("Input Modifier");
+			ParameterModifier newParamModifier = newParamModifierGO.AddComponent<InputParameterModifier>();
+			newParamModifierGO.transform.parent = FMODParameter.transform;
+			Selection.activeGameObject = newParamModifierGO;
+		}
 
 		ParameterModifier[] modifiers = FMODParameter.GetComponentsInChildren<ParameterModifier>().Where(m => m.enabled).ToArray();
 		FMODParameter.ParameterModifiers = modifiers;

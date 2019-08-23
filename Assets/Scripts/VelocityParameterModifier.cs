@@ -8,29 +8,30 @@ public class VelocityParameterModifier : ParameterModifier
 	public TrackObject SourceObject;
 	public TrackAxis VelocityAxis;
 	public float OverDuration = 1f;
-	public List<TimePosition> RecentPositions;
+	
+	private List<TimePosition> m_recentPositions;
 
 	public void Update()
 	{
 		Vector3 position = TrackObjectUtility.GetObject(SourceObject).transform.position;
 
-		RecentPositions.Add(new TimePosition()
+		m_recentPositions.Add(new TimePosition()
 		{
 			Time = Time.time,
 			Position = position
 		});
 
-		while (RecentPositions.Count > 1 && RecentPositions[1].Time <= Time.time - OverDuration)
+		while (m_recentPositions.Count > 1 && m_recentPositions[1].Time <= Time.time - OverDuration)
 		{
-			RecentPositions.RemoveAt(0);
+			m_recentPositions.RemoveAt(0);
 		}
 
 		Vector3 velocity = Vector3.zero;
 
-		for (int i = 0; i < RecentPositions.Count-1; i++)
+		for (int i = 0; i < m_recentPositions.Count-1; i++)
 		{
-			Vector3 delta = RecentPositions[i+1].Position - RecentPositions[i].Position;
-			float deltaTime = RecentPositions[i+1].Time - Mathf.Max(Time.time - OverDuration, RecentPositions[i].Time);
+			Vector3 delta = m_recentPositions[i+1].Position - m_recentPositions[i].Position;
+			float deltaTime = m_recentPositions[i+1].Time - Mathf.Max(Time.time - OverDuration, m_recentPositions[i].Time);
 
 			velocity += (delta / deltaTime) * (deltaTime / OverDuration);
 		}
