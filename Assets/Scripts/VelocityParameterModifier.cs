@@ -9,7 +9,7 @@ public class VelocityParameterModifier : ParameterModifier
 	public TrackAxis VelocityAxis;
 	public float OverDuration = 1f;
 	
-	private List<TimePosition> m_recentPositions;
+	private List<TimePosition> m_recentPositions = new List<TimePosition>();
 
 	public void Update()
 	{
