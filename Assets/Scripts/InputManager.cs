@@ -15,7 +15,9 @@ public class InputManager : MonoBehaviour
 	public enum InputSource
 	{
 		LeftTrigger,
-		RightTrigger
+		RightTrigger,
+		LeftThumbstickX,
+		LeftThumbstickY,
 	}
 
 	[System.Serializable]
