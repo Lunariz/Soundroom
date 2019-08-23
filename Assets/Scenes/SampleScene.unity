@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeType: 4
-  TriggerButton: TriggerLeft
+  TriggerInput: 0
 --- !u!135 &734451359
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NodeType: 5
-  TriggerButton: TriggerRight
+  TriggerInput: 1
 --- !u!135 &778976072
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
   Parameter: Volume
   CurrentParameterValue: 0
   ParameterModifiers:
-  - {fileID: 1485965577}
+  - {fileID: 1485965579}
   FMODEvent: {fileID: 0}
 --- !u!4 &1313898866
 Transform:
@@ -590,6 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1485965578}
   - component: {fileID: 1485965577}
+  - component: {fileID: 1485965579}
   m_Layer: 0
   m_Name: Position Modifier
   m_TagString: Untagged
@@ -603,7 +604,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485965576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d05b9c03218de442a0c0214c1e941f2, type: 3}
   m_Name: 
@@ -625,6 +626,20 @@ Transform:
   m_Father: {fileID: 1313898866}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1485965579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485965576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa90bcd4c7a36c45b08cd186efbab71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FMODParameter: {fileID: 0}
+  CurrentParameterValue: 0
+  Input: 1
 --- !u!1 &1938868923
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938868924}
   - component: {fileID: 1938868925}
+  - component: {fileID: 1938868926}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -671,3 +687,21 @@ MonoBehaviour:
   Head: {fileID: 534669902}
   LeftHand: {fileID: 734451357}
   RightHand: {fileID: 778976070}
+--- !u!114 &1938868926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938868923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1117c2fa870f270449cca2cc50a0ee4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inputs:
+  - InputName: TriggerLeft
+    InputSource: 0
+    InputType: 1
+  - InputName: TriggerRight
+    InputSource: 1
+    InputType: 1

@@ -6,7 +6,7 @@ using UnityEngine.XR;
 public class Hand : MonoBehaviour
 {
 	public XRNode NodeType;
-	public string TriggerButton;
+	public InputManager.InputSource TriggerInput;
 
 	private Vector3 m_baseScale;
 
@@ -22,7 +22,7 @@ public class Hand : MonoBehaviour
 		transform.localPosition = InputTracking.GetLocalPosition(NodeType);
 		transform.localRotation = InputTracking.GetLocalRotation(NodeType);
 
-		if (Input.GetAxis(TriggerButton) >= 0.1f)
+		if (InputManager.Instance.GetAxis(TriggerInput) > 0.1f)
 		{
 			gameObject.transform.localScale = m_baseScale / 2;
 		}
