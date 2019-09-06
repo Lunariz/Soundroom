@@ -80,7 +80,7 @@ public class FmodResonanceAudioRoom : MonoBehaviour {
   public Vector3 size = Vector3.one;
 
   void OnEnable () {
-    FmodResonanceAudio.UpdateAudioRoom(this, FmodResonanceAudio.IsListenerInsideRoom(this));
+    //FmodResonanceAudio.UpdateAudioRoom(this, FmodResonanceAudio.IsListenerInsideRoom(this));
   }
 
   void OnDisable () {
