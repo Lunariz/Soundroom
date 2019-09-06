@@ -565,6 +565,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parameters:
   - {fileID: 1313898865}
+  - {fileID: 456679915}
+  - {fileID: 386905083}
+  - {fileID: 858389446}
 --- !u!1 &734451357
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FMODParameter: {fileID: 0}
   CurrentParameterValue: 0
+  SourceObject: 0
   RotationAxis: 0
 --- !u!1 &778976070
 GameObject:
